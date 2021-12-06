@@ -26,6 +26,18 @@ const Shop = () => {
       imgSrc: '#',
       name: 'fourth item',
       price: '$20.75'
+    },
+    {
+      id: 80695485,
+      imgSrc: '#',
+      name: 'fifth item',
+      price: '$11.65'
+    },
+    {
+      id: 1239891248,
+      imgSrc: '#',
+      name: 'sixth item',
+      price: '$6.75'
     }
   ])
 

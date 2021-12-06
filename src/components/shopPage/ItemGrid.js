@@ -7,6 +7,7 @@ const StyledGrid = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 1240px;
 `
 
 const ItemGrid = ({ items, clickHandler }) => {

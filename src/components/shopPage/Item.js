@@ -6,6 +6,11 @@ const StyledContainer = styled.div`
   height: 300px;
   border: 1px solid black;
   margin: 30px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 2px 2px rgb(210, 210, 210);
+  }
 `
 
 const StyledImageContainer = styled.div`
