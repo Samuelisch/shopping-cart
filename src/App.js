@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 10px;
     color: rgb(15, 15, 15);
     margin: 0;
-    background: rgb(245, 245, 245)
+    background: rgb(245, 245, 245
   }
 `
 
