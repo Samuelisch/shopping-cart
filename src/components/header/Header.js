@@ -11,7 +11,7 @@ const StyledHeader = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    max-width: 1440px;
+    max-width: 1560px;
   }
 
   h1 {
