@@ -1,21 +1,34 @@
 import React, { useState, useEffect } from 'react'
 import ItemGrid from './ItemGrid'
-import Instruments from '../assets/Items'
+import Instruments from '../assets/Instruments'
+import ItemSelect from './ItemSelect'
 
 const Shop = () => {
+  const [selectItem, setSelectItem] = useState(null)
   const [items, setItems] = useState([])
 
   useEffect(() => {
     setItems(Instruments)
   }, [])
 
-  const handleItemClick = (e, uniqueId) => {
-    console.log(items.find(item => item.id === uniqueId))
+  const handleItemClick = (uniqueId) => {
+    setSelectItem(items.find(item => item.id === uniqueId))
+  }
+
+  const exitButtonHandler = () => {
+    setSelectItem(null)
   }
 
   return (
     <div>
       <ItemGrid items={items} clickHandler={handleItemClick} />
+      {selectItem &&
+        <ItemSelect 
+          item={selectItem}
+          //addButtonHandler
+          exitButtonHandler={exitButtonHandler}
+        />
+      }
     </div>
   )
 }
