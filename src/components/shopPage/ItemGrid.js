@@ -7,19 +7,20 @@ const StyledGrid = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1240px;
 `
 
 const ItemGrid = ({ items, clickHandler }) => {
   const itemsMap = items.map(item => (
+    <div key={item.id}>
     <Item
-      key={item.id}
       id={item.id} 
       imgSrc={item.imgSrc}
       title={item.name}
       price={item.price}
       clickHandler={clickHandler}
     />
+    <hr />
+    </div>
   ))
 
   return (

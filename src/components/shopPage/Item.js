@@ -2,26 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-  width: 225px;
-  height: 300px;
-  border: 1px solid black;
+  height: 200px;
   margin: 30px;
 
   &:hover {
     cursor: pointer;
     box-shadow: 1px 2px 2px 2px rgb(210, 210, 210);
   }
-`
 
-const StyledImageContainer = styled.div`
-  width: 100%;
-  height: 225px;
-  border: 1px solid red;
-  background: rgb(245, 245, 245)
+  @media (min-width: 768px) {
+    height: 300px;
+  }
+
+  @media (min-width: 1024px) {
+    height: 350px;
+  }
 `
 
 const StyledDescription = styled.div`
-  margin: 10px 0;
+  margin: 20px 0;
   .title {
     font-size: 2rem;
     font-weight: bold;
@@ -31,18 +30,32 @@ const StyledDescription = styled.div`
     margin-top: 10px;
     font-size: 1.2rem;
   }
+
+  @media (min-width: 1024px) {
+    .title {
+      font-size: 3rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+  }
+`
+
+const StyledImg = styled.img`
+  max-width: 100%;
+  margin-top: 35px;
 `
 
 const Item = ({ imgSrc, title, price, clickHandler, id }) => {
   return (
     <StyledContainer onClick={(e) => clickHandler(e, id)}>
-      <StyledImageContainer>
-        <img src={imgSrc} alt={title} />
-      </StyledImageContainer>
       <StyledDescription>
         <div className="title">{title}</div>
         <div className="price">{price}</div>
       </StyledDescription>
+      <StyledImg src={imgSrc.default} alt={title} />
     </StyledContainer>
   )
 }
