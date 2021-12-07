@@ -1,9 +1,13 @@
 import React from 'react'
-import Input from './Input'
 import styled from 'styled-components'
 
-const NumInput = ({ changeHandler, value }) => (
-  <Input type="number" changeHandler={changeHandler} value={value} />
+const StyledInput = styled.input`
+  width: 15px;
+  text-align: center;
+`
+
+const NumInput = ({ value, changeHandler }) => (
+  <StyledInput type="num" value={value} onChange={changeHandler} />
 )
 
 export default NumInput
