@@ -50,7 +50,7 @@ const StyledImg = styled.img`
 
 const Item = ({ imgSrc, title, price, clickHandler, id }) => {
   return (
-    <StyledContainer onClick={(e) => clickHandler(e, id)}>
+    <StyledContainer onClick={() => clickHandler(id)}>
       <StyledDescription>
         <div className="title">{title}</div>
         <div className="price">{price}</div>
