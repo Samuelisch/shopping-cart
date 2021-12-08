@@ -3,7 +3,7 @@ import ItemGrid from './ItemGrid'
 import Instruments from '../assets/Instruments'
 import ItemSelect from './ItemSelect'
 
-const Shop = () => {
+const Shop = ({ addToCart }) => {
   const [selectItem, setSelectItem] = useState(null)
   const [items, setItems] = useState([])
 
@@ -25,7 +25,7 @@ const Shop = () => {
       {selectItem &&
         <ItemSelect 
           item={selectItem}
-          //addButtonHandler
+          addButtonHandler={addToCart}
           exitButtonHandler={exitButtonHandler}
         />
       }
