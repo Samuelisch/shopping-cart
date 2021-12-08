@@ -19,7 +19,6 @@ const StyledContainer = styled.div`
 
 const StyledContent = styled.div`
   width: 80%;
-  height: 400px;
   background-color: rgb(250, 250, 250);
   display: flex;
   flex-direction: column;
@@ -27,9 +26,14 @@ const StyledContent = styled.div`
   padding: 20px 10px;
 `
 
+const StyledImgContainer = styled.div`
+  height: 150px;
+  display: flex;
+  align-items: center;
+`
+
 const StyledImg = styled.img`
   width: 100%;
-  margin-top: 50px;
 `
 
 const StyledDescription = styled.div`
@@ -42,8 +46,19 @@ const StyledDescription = styled.div`
   }
 `
 
+const StyledFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-style: italic;
+    font-size: 1.2rem;
+    width: 50%;
+  }
+`
+
 const StyledConfigurations = styled.div`
-  float: right;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,22 +71,53 @@ const StyledConfigurations = styled.div`
 const ItemSelect = ({ item, addButtonHandler, exitButtonHandler }) => {
   const [num, setNum] = useState(1)
 
+  const numChangeHandler = (value) => {
+    if (value < 1 || value > 10) {
+      return
+    }
+    setNum(value)
+  }
+
+  const numChange = (e) => {
+    numChangeHandler(e.target.value)
+  }
+
+  const plusBtnHandler = () => {
+    numChangeHandler(num + 1)
+  }
+
+  const minusBtnHandler = () => {
+    numChangeHandler(num - 1)
+  }
+
+  const clickHandler = (e) => {
+    if (e.target === document.querySelector('.outsideContent')) {
+      exitButtonHandler()
+    }
+  }
+
   return (
-    <StyledContainer>
+    <StyledContainer className="outsideContent" onClick={(e) => clickHandler(e)}>
       <StyledContent>
-        <StyledImg src={item.imgSrc.default} alt={item.name} />
+        <StyledImgContainer>
+          <StyledImg src={item.imgSrc.default} alt={item.name} />
+        </StyledImgContainer>
         <StyledDescription>
           <hr />
           <h2>{item.name}</h2>
-          <p>The price of this clarinet is {item.price}. This includes a premium ligature, silk swab, a box of reeds, and numerous other exclusive accessories.</p>
-          <StyledConfigurations>
-            <div>
-              <Button text="-" />
-              <NumInput value={1}/>
-              <Button text="+" />
-            </div>
-            <Button text="Add to cart"/>
-          </StyledConfigurations>
+          <p>The price of this clarinet is {item.price}.</p>
+          <p> This includes a premium ligature, silk swab, a box of reeds, and numerous other exclusive accessories.</p>
+          <StyledFooter>
+            <p>*All orders are limited to 10 pieces per model</p>
+            <StyledConfigurations>
+              <div>
+                <Button text="-" clickHandler={minusBtnHandler} />
+                <NumInput value={num} changeHandler={(e) => numChange(e)} />
+                <Button text="+" clickHandler={plusBtnHandler} />
+              </div>
+              <Button text="Add to cart" clickHandler={() => addButtonHandler(item, num)} />
+            </StyledConfigurations>
+          </StyledFooter>
         </StyledDescription>
       </StyledContent>
     </StyledContainer>
