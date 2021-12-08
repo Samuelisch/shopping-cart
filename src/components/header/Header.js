@@ -33,12 +33,12 @@ const StyledHeader = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ cartClick }) => {
   return (
     <StyledHeader>
       <div className="headerContainer">
         <h1>Store Title</h1>
-        <NavBar />
+        <NavBar cartClick={cartClick}/>
       </div>
     </StyledHeader>
   )
