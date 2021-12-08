@@ -4,12 +4,19 @@ import Shop from './shopPage/Shop';
 import Home from './homePage/Home';
 import Contact from './contactPage/Contact';
 
-const Router = () => {
+const Router = ({ addToCart }) => {
   return (
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="products" element={<Shop />}></Route>
+        <Route 
+          path="products" 
+          element={
+            <Shop 
+              addToCart={addToCart}
+            />
+          } 
+        />
         <Route path="contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
