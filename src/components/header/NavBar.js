@@ -34,13 +34,13 @@ const StyledNav = styled.nav`
   }
 `
 
-const NavBar = () => (
+const NavBar = ({ cartClick }) => (
   <StyledNav>
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/products">Products</a></li>
       <li><a href="/Contact">Contact</a></li>
-      <li><FontAwesomeIcon icon={faShoppingCart} size="lg" /></li>
+      <li onClick={cartClick}><FontAwesomeIcon icon={faShoppingCart} size="lg" /></li>
     </ul>
   </StyledNav>
 )
