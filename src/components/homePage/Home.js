@@ -55,7 +55,7 @@ const Home = () => {
         <StyledContainer>
           <StyledText>Featured Clarinet of the day</StyledText>
           <Featured item={featured} />
-          <Link to="/products"><StyledButton className="shop" text="Shop now" /></Link>
+          <Link to="/shopping-cart/products"><StyledButton className="shop" text="Shop now" /></Link>
       </StyledContainer>
       }
   </div>
