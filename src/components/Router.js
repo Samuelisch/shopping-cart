@@ -82,7 +82,7 @@ const Router = () => {
       <Routes>
         <Route index element={<Home />} />
         <Route 
-          path="products" 
+          path="shopping-cart/products" 
           element={
             <Shop 
               addToCart={addToCart}

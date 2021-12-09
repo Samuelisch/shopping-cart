@@ -70,8 +70,8 @@ const CartNumIcon = styled.div`
 const NavBar = ({ cartClick, numCart }) => (
   <StyledNav>
     <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/products">Products</Link></li>
+      <li><Link to="/shopping-cart/">Home</Link></li>
+      <li><Link to="/shopping-cart/products">Products</Link></li>
       <CartIcon onClick={cartClick}>
         <FontAwesomeIcon icon={faShoppingCart} size="lg" />
         {numCart !== 0 &&
