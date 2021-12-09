@@ -80,7 +80,7 @@ const Router = () => {
     <BrowserRouter>
       <Header cartClick={cartViewHandler} numCart={numItems} />
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="shopping-cart" element={<Home />} />
         <Route 
           path="shopping-cart/products" 
           element={
