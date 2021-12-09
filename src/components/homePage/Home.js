@@ -35,7 +35,7 @@ const Home = () => {
   const [featured, setFeatured] = useState([])
 
   const randInt = (length) => {
-    return Math.round(Math.random() * length - 1)
+    return Math.floor(Math.random() * length)
   }
 
   useEffect(() => {
