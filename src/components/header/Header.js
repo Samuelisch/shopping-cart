@@ -47,7 +47,7 @@ const Header = ({ cartClick, numCart }) => {
   return (
     <StyledHeader>
       <div className="headerContainer">
-        <h1><Link to="/">Clarinet Corner</Link></h1>
+        <h1><Link to="/shopping-cart/">Clarinet Corner</Link></h1>
         <NavBar cartClick={cartClick} numCart={numCart} />
       </div>
     </StyledHeader>
