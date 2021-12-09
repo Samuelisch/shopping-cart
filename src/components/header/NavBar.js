@@ -35,13 +35,35 @@ const StyledNav = styled.nav`
   }
 `
 
-const NavBar = ({ cartClick }) => (
+const CartIcon = styled.li`
+  position: relative;
+`
+
+const CartNumIcon = styled.div`
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  background: rgb(245, 165, 80);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const NavBar = ({ cartClick, numCart }) => (
   <StyledNav>
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/products">Products</Link></li>
       <li><Link to="/Contact">Contact</Link></li>
-      <li onClick={cartClick}><FontAwesomeIcon icon={faShoppingCart} size="lg" /></li>
+      <CartIcon onClick={cartClick}>
+        <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+        {numCart !== 0 &&
+          <CartNumIcon>{numCart}</CartNumIcon>}
+      </CartIcon>
     </ul>
   </StyledNav>
 )
