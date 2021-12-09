@@ -19,6 +19,7 @@ const StyledContainer = styled.div`
 
 const StyledContent = styled.div`
   width: 80%;
+  max-width: 1280px;
   background-color: rgb(250, 250, 250);
   display: flex;
   flex-direction: column;
