@@ -13,61 +13,61 @@ const Instruments = [
     id: uuidv4(),
     imgSrc: images['bcxxi-grenadilla.png'],
     name: 'BCXXI Grenadilla',
-    price: 10790
+    price: 10799.00
   },
   {
     id: uuidv4(),
     imgSrc: images['r13-mopane.png'],
     name: 'R13 Mopane',
-    price: 4390
+    price: 4399.00
   },
   {
     id: uuidv4(),
     imgSrc: images['tosca-mopane.png'],
     name: 'Tosca Mopane',
-    price: 8250
+    price: 8259.00
   },
   {
     id: uuidv4(),
     imgSrc: images['legende-mopane.png'],
     name: 'Legende Mopane',
-    price: 9750
+    price: 9759.00
   },
   {
     id: uuidv4(),
     imgSrc: images['legende-boxwood.png'],
     name: 'Legende Boxwood',
-    price: 13950
+    price: 13959.00
   },
   {
     id: uuidv4(),
     imgSrc: images['divine-grenadilla.png'],
     name: 'Divine Grenadilla',
-    price: 8950
+    price: 8959.00
   },
   {
     id: uuidv4(),
     imgSrc: images['festival-grenadilla.png'],
     name: 'Festival Grenadilla',
-    price: 4550
+    price: 4559.00
   },
   {
     id: uuidv4(),
     imgSrc: images['tosca-grenadilla.png'],
     name: 'Tosca Grenadilla',
-    price: 7950
+    price: 7959.00
   },
   {
     id: uuidv4(),
     imgSrc: images['r13-grenadilla.png'],
     name: 'R13 Grenadilla',
-    price: 3450
+    price: 3459.00
   },
   {
     id: uuidv4(),
     imgSrc: images['rc-grenadilla.png'],
     name: 'RC Grenadilla',
-    price: 3450
+    price: 3459.00
   },
 ];
 

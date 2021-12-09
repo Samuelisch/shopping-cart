@@ -2,7 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 import ItemInstance from './ItemInstance'
 
+const StyledEmpty = styled.p`
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+`
+
+const StyledPrice = styled.div`
+  .tax {
+    text-align: left;
+    font-size: 1.3rem;
+  }
+
+  .total {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+`
+
 const CartItems = ({ totalPrice, content, addToCart, removeFromCart }) => {
+  const totalTax = ((totalPrice * 0.07 * 100) / 100).toFixed(2)
   const itemList = content.map(item => (
     <ItemInstance 
       key={item.id}
@@ -14,9 +33,17 @@ const CartItems = ({ totalPrice, content, addToCart, removeFromCart }) => {
 
   return (
     <div>
+      {content.length === 0 &&
+        <StyledEmpty>Cart is empty</StyledEmpty>
+      }
       {itemList}
-      <hr />
-      <p>Total value of cart: $ {totalPrice} </p>
+      <StyledPrice>
+        <div className="tax">
+          <p>Total before GST:  ${totalPrice}</p>
+          <p>GST(7%):  ${totalTax} </p>
+        </div>
+        <p className="total">Total payable: ${((totalPrice * 1.07 * 100) / 100).toFixed(2)} </p>
+      </StyledPrice>
     </div>
   )
 }

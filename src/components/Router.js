@@ -14,13 +14,9 @@ const Router = () => {
   const [cartView, setCartView] = useState(false)
 
   useEffect(() => {
-    if (cartContent.length === 0) {
-      setTotalPrice(0)
-    } else {
       let total = 0;
       cartContent.forEach(item => total += item.price * item.quantity)
-      setTotalPrice(total)
-    }
+      setTotalPrice(((total * 100) / 100).toFixed(2))
   }, [cartContent])
 
   useEffect(() => {
