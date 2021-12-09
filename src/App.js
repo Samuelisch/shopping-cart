@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Router from './components/Router'
 import { createGlobalStyle } from 'styled-components'
 
@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
+  useEffect(() => {
+    document.title = "Clarinet Corner";  
+  }, []);
 
   return (
     <div>
