@@ -72,7 +72,7 @@ const NavBar = ({ cartClick, numCart }) => (
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/products">Products</Link></li>
-      <li><Link to="/Contact">Contact</Link></li>
+      <li><Link to="/contact">Contact</Link></li>
       <CartIcon onClick={cartClick}>
         <FontAwesomeIcon icon={faShoppingCart} size="lg" />
         {numCart !== 0 &&

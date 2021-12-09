@@ -5,7 +5,6 @@ import Home from './homePage/Home';
 import Contact from './contactPage/Contact';
 import Cart from './cartTab/Cart';
 import Header from './header/Header';
-import Footer from './Footer';
 
 const Router = () => {
   const [cartContent, setCartContent] = useState([])
