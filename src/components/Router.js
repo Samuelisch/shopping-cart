@@ -73,7 +73,7 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <Header cartClick={cartViewHandler} numItem />
+      <Header cartClick={cartViewHandler} numCart={cartContent.length} />
       <Routes>
         <Route index element={<Home />} />
         <Route 
