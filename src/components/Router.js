@@ -8,26 +8,8 @@ import Header from './header/Header';
 import Footer from './Footer';
 
 const Router = () => {
-  const [cartContent, setCartContent] = useState([
-    {
-      id: 58437,
-      name: 'RC Grenadilla',
-      price: 3450,
-      quantity: 2
-    },
-    {
-      id: 4938243,
-      name: 'R13 Grenadilla',
-      price: 3450,
-      quantity: 6
-    },
-    {
-      id: 498312098,
-      name: 'Tosca Grenadilla',
-      price: 7950,
-      quantity: 4
-    },
-  ])
+  const [cartContent, setCartContent] = useState([])
+  const [numItems, setNumItems] = useState(0)
   const [totalPrice, setTotalPrice] = useState(0)
   const [cartView, setCartView] = useState(false)
 
@@ -38,6 +20,16 @@ const Router = () => {
       let total = 0;
       cartContent.forEach(item => total += item.price * item.quantity)
       setTotalPrice(total)
+    }
+  }, [cartContent])
+
+  useEffect(() => {
+    if (cartContent.length === 0) {
+      setNumItems(0)
+    } else {
+      let total = 0;
+      cartContent.forEach(item => total += item.quantity)
+      setNumItems(total)
     }
   }, [cartContent])
 
@@ -73,7 +65,7 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <Header cartClick={cartViewHandler} numCart={cartContent.length} />
+      <Header cartClick={cartViewHandler} numCart={numItems} />
       <Routes>
         <Route index element={<Home />} />
         <Route 
@@ -86,7 +78,7 @@ const Router = () => {
         />
         <Route path="contact" element={<Contact />} />
       </Routes>
-      {true &&
+      {cartView &&
         <Cart 
           cartHandler={cartViewHandler} 
           cartContent={cartContent}
