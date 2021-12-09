@@ -78,16 +78,6 @@ const Router = () => {
     setCartContent([])
   }
 
-  const orderItems = () => {
-    if (cartContent.length === 0) {
-      window.alert('Cart is empty!')
-      return
-    } else {
-      window.alert(`Items ordered! Your card has been charged $${((totalPrice * 1.07 * 100) / 100).toFixed(2)}`)
-      clearCart()
-    }
-  }
-
   return (
     <BrowserRouter>
       <Header cartClick={cartViewHandler} numCart={numItems} />
@@ -110,7 +100,7 @@ const Router = () => {
           addToCart={addToCart}
           removeFromCart={removeNumFromCart}
           totalPrice={totalPrice}
-          orderItems={orderItems}
+          clearCart={clearCart}
         /> 
       }
     </BrowserRouter>

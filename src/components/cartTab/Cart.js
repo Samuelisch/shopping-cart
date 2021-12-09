@@ -27,15 +27,54 @@ const StyledContent = styled.div`
   padding: 20px 10px;
 `
 
-const StyledButton = styled(Button)`
-  background: rgb(255, 165, 0);
-  border-radius: 5px;
+const StyledButtons = styled.div`
+  button {
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+
+  .confirm {
+    background: rgb(255, 165, 0);
+
+     &:hover {
+      background: rgb(240, 120, 0);
+     }
+  }
+
+  .clear {
+    background: rgb(240, 0, 20);
+
+    &:hover {
+      background: rgb(230, 0, 0);
+     }
+  }
 `
 
-const Cart = ({ orderItems, totalPrice, exitCartHandler, cartContent, addToCart, removeFromCart }) => {
+const Cart = ({ clearCart, totalPrice, exitCartHandler, cartContent, addToCart, removeFromCart }) => {
   const exitCart = (e) => {
     if (e.target === document.querySelector('.cartOutsideContent')) {
       exitCartHandler()
+    }
+  }
+
+  const orderItems = () => {
+    if (cartContent.length === 0) {
+      window.alert('Cart is empty!')
+      return
+    } else {
+      window.alert(`Items ordered! Your card has been charged $${((totalPrice * 1.07 * 100) / 100).toFixed(2)}`)
+      clearCart()
+    }
+  }
+
+  const clearContent = () => {
+    if (cartContent.length === 0) {
+      window.alert('Cart is empty!')
+      return
+    }
+    if (window.confirm("Clear entire cart's content?")) {
+      clearCart()
     }
   }
 
@@ -48,7 +87,10 @@ const Cart = ({ orderItems, totalPrice, exitCartHandler, cartContent, addToCart,
             removeFromCart={removeFromCart} 
             totalPrice={totalPrice}
           />
-          <StyledButton clickHandler={orderItems} className="confirm" text="Proceed to payment" />
+          <StyledButtons>
+            <Button className="clear" clickHandler={clearContent} text="Clear cart" />
+            <Button  className="confirm" clickHandler={orderItems} text="Proceed to payment" />
+          </StyledButtons>
       </StyledContent>
     </StyledContainer>
   )
