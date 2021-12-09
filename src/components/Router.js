@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from './shopPage/Shop';
 import Home from './homePage/Home';
-import Contact from './contactPage/Contact';
 import Cart from './cartTab/Cart';
 import Header from './header/Header';
 
@@ -90,7 +89,6 @@ const Router = () => {
             />
           } 
         />
-        <Route path="contact" element={<Contact />} />
       </Routes>
       {cartView &&
         <Cart 
