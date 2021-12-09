@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import Header from './components/header/Header'
-import Footer from './components/Footer'
 import Router from './components/Router'
-import Cart from './components/cartTab/Cart'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -54,16 +51,13 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <Header cartClick={cartViewHandler} />
-      <Router addToCart={addToCart} />
-      {cartView &&
-        <Cart 
-          exitCartHandler={cartViewHandler} 
-          cartContent={cartContent}
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
-        /> 
-      }
+      <Router 
+        addToCart={addToCart}
+        cartViewHandler={cartViewHandler}
+        cartContent={cartContent}
+        removeFromCart={removeFromCart}
+        cartView={cartView}
+      />
     </div>
   );
 }
