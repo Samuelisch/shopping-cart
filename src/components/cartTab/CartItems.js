@@ -6,6 +6,10 @@ const StyledEmpty = styled.p`
   text-align: center;
   font-size: 1.4rem;
   font-weight: bold;
+
+  @media (min-width: 1024px) {
+    font-size: 1.8rem;
+  }
 `
 
 const StyledPrice = styled.div`
@@ -17,6 +21,16 @@ const StyledPrice = styled.div`
   .total {
     text-align: center;
     font-size: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .tax {
+      font-size: 1.5rem;
+    }
+
+    .total {
+      font-size: 1.8rem;
+    }
   }
 `
 
