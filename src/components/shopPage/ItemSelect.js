@@ -105,7 +105,7 @@ const ItemSelect = ({ item, addButtonHandler, exitButtonHandler }) => {
         <StyledDescription>
           <hr />
           <h2>{item.name}</h2>
-          <p>The price of this clarinet is {item.price}.</p>
+          <p>The price of this clarinet is ${item.price}.</p>
           <p> This includes a premium ligature, silk swab, a box of reeds, and numerous other exclusive accessories.</p>
           <StyledFooter>
             <p>*All orders are limited to 10 pieces per model</p>

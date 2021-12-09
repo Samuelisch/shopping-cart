@@ -53,7 +53,7 @@ const Item = ({ imgSrc, title, price, clickHandler, id }) => {
     <StyledContainer onClick={() => clickHandler(id)}>
       <StyledDescription>
         <div className="title">{title}</div>
-        <div className="price">{price}</div>
+        <div className="price">${price}</div>
       </StyledDescription>
       <StyledImg src={imgSrc.default} alt={title} />
     </StyledContainer>

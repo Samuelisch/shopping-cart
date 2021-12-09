@@ -9,7 +9,7 @@ const Shop = ({ addToCart }) => {
 
   useEffect(() => {
     setItems(Instruments)
-  }, [])
+  }, [selectItem])
 
   const handleItemClick = (uniqueId) => {
     setSelectItem(items.find(item => item.id === uniqueId))
