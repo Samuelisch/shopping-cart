@@ -28,14 +28,14 @@ const StyledName = styled.p`
 
 const StyledButton = styled(Button)`
   border: 1px solid black;
-  background: inherit;
+  background: rgb(255, 120, 0);
   font-size: 1.5rem;
   font-family: arial;
   padding: 10px;
   margin-top: 50px;
 
   &:hover {
-    background: rgb(255, 120, 0);
+    background: rgb(240, 100, 0);
   }
 `
 
