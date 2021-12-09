@@ -32,9 +32,15 @@ const StyledButton = styled(Button)`
   border-radius: 5px;
 `
 
-const Cart = ({ totalPrice, exitCartHandler, cartContent, addToCart, removeFromCart }) => {
+const Cart = ({ orderItems, totalPrice, exitCartHandler, cartContent, addToCart, removeFromCart }) => {
+  const exitCart = (e) => {
+    if (e.target === document.querySelector('.cartOutsideContent')) {
+      exitCartHandler()
+    }
+  }
+
   return (
-    <StyledContainer>
+    <StyledContainer className="cartOutsideContent" onClick={(e) => exitCart(e)}>
       <StyledContent>
           <CartItems 
             content={cartContent} 
@@ -42,7 +48,7 @@ const Cart = ({ totalPrice, exitCartHandler, cartContent, addToCart, removeFromC
             removeFromCart={removeFromCart} 
             totalPrice={totalPrice}
           />
-          <StyledButton className="confirm" text="Proceed to payment" />
+          <StyledButton clickHandler={orderItems} className="confirm" text="Proceed to payment" />
       </StyledContent>
     </StyledContainer>
   )

@@ -35,8 +35,8 @@ const Router = () => {
 
   const addNumToCart = (item, num) => {
     let newNum = item.quantity + num
-    if (newNum > 9) {
-      return
+    if (newNum > 10) {
+      newNum = 10
     }
     let newItem = Object.assign({}, item, {quantity: newNum})
     setCartContent(cartContent.map(content => content.id !== item.id ? content : newItem))
@@ -55,8 +55,37 @@ const Router = () => {
     }
   }
 
-  const removeFromCart = (item) => {
+  const removeNumFromCart = (item) => {
+    let newNum = item.quantity - 1
+    if (newNum <= 0) {
+      deleteItemFromCart(item)
+    } else {
+      let newItem = Object.assign({}, item, {quantity: newNum})
+      setCartContent(cartContent.map(content => content.id !== item.id ? content : newItem))
+    }
+  }
 
+  const deleteItemFromCart = (item) => {
+    if (window.confirm(`Remove ${item.name} from cart?`)) {
+      let copyContent = [...cartContent]
+      setCartContent(copyContent.filter(content => content.id !== item.id))
+    } else {
+      return
+    }
+  }
+
+  const clearCart = () => {
+    setCartContent([])
+  }
+
+  const orderItems = () => {
+    if (cartContent.length === 0) {
+      window.alert('Cart is empty!')
+      return
+    } else {
+      window.alert(`Items ordered! Your card has been charged $${((totalPrice * 1.07 * 100) / 100).toFixed(2)}`)
+      clearCart()
+    }
   }
 
   return (
@@ -76,11 +105,12 @@ const Router = () => {
       </Routes>
       {cartView &&
         <Cart 
-          cartHandler={cartViewHandler} 
+          exitCartHandler={cartViewHandler} 
           cartContent={cartContent}
           addToCart={addToCart}
-          removeFromCart={removeFromCart}
+          removeFromCart={removeNumFromCart}
           totalPrice={totalPrice}
+          orderItems={orderItems}
         /> 
       }
     </BrowserRouter>
