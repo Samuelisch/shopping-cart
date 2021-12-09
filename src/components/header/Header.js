@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 
 const StyledHeader = styled.div`
   border: 1px solid blue;
@@ -17,6 +18,15 @@ const StyledHeader = styled.div`
   h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+  }
+
+  a {
+    color: rgb(15, 15, 15);
+    text-decoration: none;
+
+    &:hover {
+      cursor: default;
+    }
   }
 
   @media (min-width: 800px) {
@@ -37,7 +47,7 @@ const Header = ({ cartClick, numCart }) => {
   return (
     <StyledHeader>
       <div className="headerContainer">
-        <h1>Store Title</h1>
+        <h1><Link to="/">Clarinet Corner</Link></h1>
         <NavBar cartClick={cartClick} numCart={numCart} />
       </div>
     </StyledHeader>
