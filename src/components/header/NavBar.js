@@ -20,6 +20,11 @@ const StyledNav = styled.nav`
     color: rgb(15, 15, 15);
     text-decoration: none;
     margin-right: 20px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid rgb(15,15,15)
+    }
   }
 
   @media (min-width: 800px) {
@@ -37,6 +42,11 @@ const StyledNav = styled.nav`
 
 const CartIcon = styled.li`
   position: relative;
+  border-bottom: 1px solid transparent;
+  
+  &:hover {
+    border-bottom: 1px solid rgb(15,15,15)
+  }
 `
 
 const CartNumIcon = styled.div`
@@ -51,6 +61,10 @@ const CartNumIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    cursor: default;
+  }
 `
 
 const NavBar = ({ cartClick, numCart }) => (
