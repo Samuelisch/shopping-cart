@@ -32,7 +32,7 @@ const StyledButton = styled(Button)`
   border-radius: 5px;
 `
 
-const Cart = ({ exitCartHandler, cartContent, addToCart, removeFromCart }) => {
+const Cart = ({ totalPrice, exitCartHandler, cartContent, addToCart, removeFromCart }) => {
   return (
     <StyledContainer>
       <StyledContent>
@@ -40,6 +40,7 @@ const Cart = ({ exitCartHandler, cartContent, addToCart, removeFromCart }) => {
             content={cartContent} 
             addToCart={addToCart} 
             removeFromCart={removeFromCart} 
+            totalPrice={totalPrice}
           />
           <StyledButton className="confirm" text="Proceed to payment" />
       </StyledContent>
