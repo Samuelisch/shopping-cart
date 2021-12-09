@@ -38,9 +38,9 @@ const StyledNav = styled.nav`
 const NavBar = ({ cartClick }) => (
   <StyledNav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/products">Products</a></li>
-      <li><a href="/Contact">Contact</a></li>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/products">Products</Link></li>
+      <li><Link to="/Contact">Contact</Link></li>
       <li onClick={cartClick}><FontAwesomeIcon icon={faShoppingCart} size="lg" /></li>
     </ul>
   </StyledNav>
