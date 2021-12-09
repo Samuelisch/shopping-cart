@@ -3,6 +3,7 @@ import Instruments from '../assets/Instruments'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Button from '../assets/Button'
+import Featured from './Featured'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -15,15 +16,6 @@ const StyledText = styled.p`
   text-align: center;
   font-size: 2rem;
   margin-bottom: 50px;
-`
-
-const StyledImg = styled.img`
-  width: 100%;
-`
-
-const StyledName = styled.p`
-  font-size: 1.5rem;
-  font-weight: bold;
 `
 
 const StyledButton = styled(Button)`
@@ -62,8 +54,7 @@ const Home = () => {
       {featured !== undefined &&
         <StyledContainer>
           <StyledText>Featured Clarinet of the day</StyledText>
-          <StyledImg src={featured.image} alt="featured clarinet" />
-          <StyledName>{featured.name}</StyledName>
+          <Featured item={featured} />
           <Link to="/products"><StyledButton className="shop" text="Shop now" /></Link>
       </StyledContainer>
       }
