@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from '../assets/Button'
-import NumInput from '../assets/NumInput'
 
 const StyledContainer = styled.div`
   position: fixed;
@@ -63,10 +62,24 @@ const StyledConfigurations = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100px;
 
   button {
     margin-top: 10px;
   }
+`
+
+const StyledInputs = styled.div`
+  display: flex;
+  height: 30px;
+  width: 60%;
+  justify-content: space-around;
+`
+
+const StyledNum = styled.p`
+  width: 20px;
+  font-size: 2rem;
+  text-align: center;
 `
 
 const ItemSelect = ({ item, addButtonHandler, exitButtonHandler }) => {
@@ -77,10 +90,6 @@ const ItemSelect = ({ item, addButtonHandler, exitButtonHandler }) => {
       return
     }
     setNum(value)
-  }
-
-  const numChange = (e) => {
-    numChangeHandler(e.target.value)
   }
 
   const plusBtnHandler = () => {
@@ -111,11 +120,11 @@ const ItemSelect = ({ item, addButtonHandler, exitButtonHandler }) => {
           <StyledFooter>
             <p>*All orders are limited to 10 pieces per model</p>
             <StyledConfigurations>
-              <div>
+              <StyledInputs>
                 <Button text="-" clickHandler={minusBtnHandler} />
-                <NumInput value={num} changeHandler={(e) => numChange(e)} />
+                <StyledNum>{num}</StyledNum>
                 <Button text="+" clickHandler={plusBtnHandler} />
-              </div>
+              </StyledInputs>
               <Button text="Add to cart" clickHandler={() => addButtonHandler(item, num)} />
             </StyledConfigurations>
           </StyledFooter>

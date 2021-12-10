@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '../assets/Button'
-import NumInput from '../assets/NumInput'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -37,9 +36,16 @@ const StyledDescription = styled.div`
 const StyledInput = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-around;
 `
 
-const ItemInstance = ({ item, quantityChangeHandler, addHandler, removeHandler }) => {
+const StyledNum = styled.p`
+  width: 20px;
+  font-size: 1.7rem;
+  text-align: center;
+`
+
+const ItemInstance = ({ item, addHandler, removeHandler }) => {
   return (
     <StyledContainer>
       <StyledImageContainer>
@@ -50,7 +56,7 @@ const ItemInstance = ({ item, quantityChangeHandler, addHandler, removeHandler }
       </StyledImageContainer>
       <StyledInput>
         <Button text="-" clickHandler={() => removeHandler(item)} />
-        <NumInput value={item.quantity} changeHandler={(e) => quantityChangeHandler(e)} />
+        <StyledNum>{item.quantity}</StyledNum>
         <Button text="+" clickHandler={() => addHandler(item)} />
       </StyledInput>
     </StyledContainer>
