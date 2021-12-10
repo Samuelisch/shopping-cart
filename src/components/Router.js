@@ -34,7 +34,7 @@ const Router = () => {
   const addNumToCart = (item, num) => {
     let newNum = item.quantity + num
     if (newNum > 10) {
-      newNum = 10
+      return
     }
     let newItem = Object.assign({}, item, {quantity: newNum})
     setCartContent(cartContent.map(content => content.id !== item.id ? content : newItem))
