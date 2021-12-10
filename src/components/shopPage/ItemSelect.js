@@ -65,20 +65,18 @@ const StyledConfigurations = styled.div`
   width: 100px;
 
   button {
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
 `
 
 const StyledInputs = styled.div`
   display: flex;
-  height: 30px;
-  width: 60%;
   justify-content: space-around;
 `
 
-const StyledNum = styled.p`
-  width: 20px;
-  font-size: 2rem;
+const StyledNum = styled.span`
+  width: 25px;
+  font-size: 1.5rem;
   text-align: center;
 `
 
