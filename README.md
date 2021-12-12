@@ -6,7 +6,7 @@ A font-end implementation of a web store, created with ReactJS.
 
 Live implementation built and accessible with [GitHub Pages](https://samuelisch.github.io/shopping-cart/)
 
-## Motivation
+### Motivation
 
 I wanted to implement a project using React Router, for access to multiple pages. There was some understanding needed to using { Links } instead of anchor tags, as I did not want the webpage to reload with every click. I referred to multiple resources for the project, including the [React Router documentation](https://reactrouter.com/docs/en/v6/getting-started/overview)
 
